@@ -1,6 +1,6 @@
 {
   "name": "@umituz/react-native-toast",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Universal toast notification system for React Native with consistent, customizable toast messages via react-native-toast-message",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -50,4 +50,3 @@
     "LICENSE"
   ]
 }
-
