@@ -22,7 +22,7 @@
  *
  * USAGE:
  *
- * Basic Example:
+ * Basic Hook Example:
  * ```typescript
  * import { useToast } from '@umituz/react-native-toast';
  *
@@ -35,6 +35,24 @@
  *       showSuccess('Saved!', 'Changes saved successfully');
  *     } catch (error) {
  *       showError('Error', 'Failed to save changes');
+ *     }
+ *   };
+ *
+ *   return <Button onPress={handleSave}>Save</Button>;
+ * };
+ * ```
+ *
+ * Utility Functions Example:
+ * ```typescript
+ * import { showSuccessToast, showErrorToast, handleApiError } from '@umituz/react-native-toast';
+ *
+ * const MyComponent = () => {
+ *   const handleSave = async () => {
+ *     try {
+ *       await saveData();
+ *       showSuccessToast('Data saved successfully!');
+ *     } catch (error) {
+ *       handleApiError(error);
  *     }
  *   };
  *
@@ -111,3 +129,14 @@ export type { ToastConfig, ToastPreset } from './domain/entities/Toast';
 
 // Presentation Layer - Hooks
 export { useToast } from './presentation/hooks/useToast';
+
+// Presentation Layer - Utilities
+export {
+  showToast,
+  showSuccessToast,
+  showErrorToast,
+  showInfoToast,
+  showWarningToast,
+  handleApiError,
+  showLoadingToast,
+} from './presentation/utilities/toastUtils';
